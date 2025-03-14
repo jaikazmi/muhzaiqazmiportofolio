@@ -150,13 +150,63 @@
         }
         
         .project-img {
-            height: 200px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
             background-color: #e5e7eb;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #9ca3af;
-            font-weight: 500;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .slide-nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .slide-nav-dot.active {
+            background-color: white;
         }
         
         .project-content {
@@ -291,7 +341,28 @@
                 <h2>Projects</h2>
                 <div class="projects-container">
                     <div class="project-card">
-                        <div class="project-img">Thrust Bench System Image</div>
+                        <div class="project-img">
+                            <div class="slideshow" id="tbs-slideshow">
+                                <div class="slide active">
+                                    <img src="images/tbs-1.jpg" alt="Thrust Bench System - Overview">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/tbs-2.jpg" alt="Thrust Bench System - Protective Enclosure">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/tbs-3.jpg" alt="Thrust Bench System - Structural Framework">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/tbs-4.jpg" alt="Thrust Bench System - Electrical Components">
+                                </div>
+                                <div class="slide-nav">
+                                    <div class="slide-nav-dot active" data-index="0"></div>
+                                    <div class="slide-nav-dot" data-index="1"></div>
+                                    <div class="slide-nav-dot" data-index="2"></div>
+                                    <div class="slide-nav-dot" data-index="3"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>Thrust Bench System (TBS)</h3>
                             <p>Designed and implemented an improved Thrust Bench System to address safety concerns with the previous design.</p>
@@ -310,7 +381,28 @@
                     </div>
                     
                     <div class="project-card">
-                        <div class="project-img">Oil Rig Design Image</div>
+                        <div class="project-img">
+                            <div class="slideshow" id="oilrig-slideshow">
+                                <div class="slide active">
+                                    <img src="RIG1.png" alt="Oil Rig Design - Complete Model">
+                                </div>
+                                <div class="slide">
+                                    <img src="RIG2.png" alt="Oil Rig Design - Y-shaped Configuration">
+                                </div>
+                                <div class="slide">
+                                    <img src="RIG3.jpg" alt="Oil Rig Design - Deck Layout">
+                                </div>
+                                <div class="slide">
+                                    <img src="RIG4.png" alt="Oil Rig Design - Renewable Energy Components">
+                                </div>
+                                <div class="slide-nav">
+                                    <div class="slide-nav-dot active" data-index="0"></div>
+                                    <div class="slide-nav-dot" data-index="1"></div>
+                                    <div class="slide-nav-dot" data-index="2"></div>
+                                    <div class="slide-nav-dot" data-index="3"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>Lightweight Oil Rig Design</h3>
                             <p>Led the development of a Y-shaped lightweight oil rig concept for the DERRICK Oil Rig Design Competition.</p>
@@ -324,7 +416,28 @@
                     </div>
                     
                     <div class="project-card">
-                        <div class="project-img">Military Vehicle Modeling Image</div>
+                        <div class="project-img">
+                            <div class="slideshow" id="military-slideshow">
+                                <div class="slide active">
+                                    <img src="images/military-1.jpg" alt="Rheinmetall UGV - Complete Model">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/military-2.jpg" alt="Rheinmetall UGV - Weaponry System">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/military-3.jpg" alt="Harimau Tank - Complete Model">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/military-4.jpg" alt="Harimau Tank - Turret System">
+                                </div>
+                                <div class="slide-nav">
+                                    <div class="slide-nav-dot active" data-index="0"></div>
+                                    <div class="slide-nav-dot" data-index="1"></div>
+                                    <div class="slide-nav-dot" data-index="2"></div>
+                                    <div class="slide-nav-dot" data-index="3"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>Military Vehicle Modeling</h3>
                             <p>Personal projects creating detailed models of military vehicles using SolidWorks.</p>
@@ -340,7 +453,28 @@
                     </div>
                     
                     <div class="project-card">
-                        <div class="project-img">Machine Elements Analysis Image</div>
+                        <div class="project-img">
+                            <div class="slideshow" id="machine-slideshow">
+                                <div class="slide active">
+                                    <img src="images/machine-1.jpg" alt="Honda Vario Components - Overview">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/machine-2.jpg" alt="Side Stand Spring Analysis">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/machine-3.jpg" alt="Main Stand Shaft Analysis">
+                                </div>
+                                <div class="slide">
+                                    <img src="images/machine-4.jpg" alt="Kickstarter Flange Bolt Analysis">
+                                </div>
+                                <div class="slide-nav">
+                                    <div class="slide-nav-dot active" data-index="0"></div>
+                                    <div class="slide-nav-dot" data-index="1"></div>
+                                    <div class="slide-nav-dot" data-index="2"></div>
+                                    <div class="slide-nav-dot" data-index="3"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>Basic Machine Elements Course Project</h3>
                             <p>Conducted structural analysis of Honda Vario 150 components using SolidWorks and theoretical mechanics.</p>
@@ -442,6 +576,59 @@
                 details.style.display = 'none';
                 this.style.display = 'none';
                 showButton.style.display = 'inline-block';
+            });
+        });
+        
+        // Slideshow functionality
+        const slideshows = document.querySelectorAll('.slideshow');
+        
+        slideshows.forEach(slideshow => {
+            const slides = slideshow.querySelectorAll('.slide');
+            const dots = slideshow.querySelectorAll('.slide-nav-dot');
+            
+            // Set up dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    
+                    // Update slides
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    slides[index].classList.add('active');
+                    
+                    // Update dots
+                    dots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
+            });
+            
+            // Auto-rotate slides
+            let currentIndex = 0;
+            
+            const rotateSlides = () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                
+                // Update slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[currentIndex].classList.add('active');
+                
+                // Update dots
+                dots.forEach(d => d.classList.remove('active'));
+                dots[currentIndex].classList.add('active');
+            };
+            
+            // Rotate every 5 seconds
+            const intervalId = setInterval(rotateSlides, 5000);
+            
+            // Stop rotation when user interacts
+            slideshow.addEventListener('mouseover', () => {
+                clearInterval(intervalId);
+            });
+            
+            // Resume rotation when user stops interacting
+            slideshow.addEventListener('mouseleave', () => {
+                clearInterval(intervalId);
+                const newIntervalId = setInterval(rotateSlides, 5000);
+                slideshow.setAttribute('data-interval', newIntervalId);
             });
         });
         
